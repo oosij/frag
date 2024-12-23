@@ -1,4 +1,6 @@
 # frag
+- only local model & open source
+  
 
 smaple : 
 
