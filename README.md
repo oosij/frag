@@ -21,7 +21,7 @@ bad case :
 
 
 
-# RAG & Web_search case : 
+** RAG & Web_search (AI agent Logic) case : 
 RAG : 
 ![RAG-결과물](https://github.com/user-attachments/assets/b42c8a37-c4a6-4b43-b1a8-c76784af5060)
 
