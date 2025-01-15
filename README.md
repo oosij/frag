@@ -26,7 +26,7 @@ RAG :
 ![RAG-결과물](https://github.com/user-attachments/assets/b42c8a37-c4a6-4b43-b1a8-c76784af5060)
 
 
-Web search :
+Web search (구글 서치 API 활용):
 ![WEB-결과물](https://github.com/user-attachments/assets/3411d975-395b-4dc4-94c6-9f6db2b2efda)
 
 -> 현재는 AI agent 로직을 추가하여 통합 및 개선 중 
