@@ -24,6 +24,7 @@ Chat case :
 
 
 
+
 ** RAG sample : 
 
 Question 1 : 
