@@ -1,8 +1,27 @@
 # frag
-- only local model & open source
-  
+- only local model & open source (web search : google search api)
 
-** sample : 
+
+
+** RAG & Web_search & Chat (AI agent Logic) case : 
+
+RAG case : 
+![RAG](https://github.com/user-attachments/assets/da135105-987c-49c1-b419-1bfa218ceda0)
+
+
+Web search case : 
+![웹검색](https://github.com/user-attachments/assets/639c854d-76fa-47c5-a997-504b3e6ee020)
+
+
+Chat case : 
+![일상대화](https://github.com/user-attachments/assets/ec9606e7-8113-40de-96fc-1209c80038c4)
+
+
+-> 현재는 AI agent 로직을 추가하여 통합 및 개선 중 
+
+
+
+** RAG sample : 
 
 Question 1 : 
 ![Q1-_online-video-cutter com_](https://github.com/user-attachments/assets/f2eb3e58-5c49-41d6-852c-828c66d00556)
@@ -20,17 +39,6 @@ bad case :
 ![I1-_online-video-cutter com_](https://github.com/user-attachments/assets/66d3f4a2-b02c-463d-b8c2-1ec75e3d94f9)
 
 
-
-** RAG & Web_search (AI agent Logic) case : 
-
-RAG : 
-![RAG-결과물](https://github.com/user-attachments/assets/b42c8a37-c4a6-4b43-b1a8-c76784af5060)
-
-
-Web search (구글 서치 API 활용):
-![WEB-결과물](https://github.com/user-attachments/assets/3411d975-395b-4dc4-94c6-9f6db2b2efda)
-
--> 현재는 AI agent 로직을 추가하여 통합 및 개선 중 
 
 
 
