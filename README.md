@@ -6,14 +6,17 @@
 ** RAG & Web_search & Chat (AI agent Logic) case : 
 
 RAG case : 
+
 ![RAG](https://github.com/user-attachments/assets/da135105-987c-49c1-b419-1bfa218ceda0)
 
 
 Web search case : 
+
 ![웹검색](https://github.com/user-attachments/assets/639c854d-76fa-47c5-a997-504b3e6ee020)
 
 
 Chat case : 
+
 ![일상대화](https://github.com/user-attachments/assets/ec9606e7-8113-40de-96fc-1209c80038c4)
 
 
