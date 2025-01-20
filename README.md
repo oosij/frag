@@ -25,7 +25,7 @@ Chat case :
 
 
 
-** RAG sample : 
+** RAG sample (old version): 
 
 Question 1 : 
 ![Q1-_online-video-cutter com_](https://github.com/user-attachments/assets/f2eb3e58-5c49-41d6-852c-828c66d00556)
