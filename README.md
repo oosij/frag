@@ -4,7 +4,7 @@
 
 
 
-** RAG & Web_search & Chat (AI agent Logic) case : 
+** RAG & Web_search & Chat (AI agent Logic) case :  (latency 문제로, 중간 시간지연은 제거)
 
 RAG case : 
 
