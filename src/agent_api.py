@@ -89,8 +89,6 @@ def system_message(query):
 
     return sys_msg + inst_msg.format(query = query)
 
-
-# 함수 이름과 실제 함수 객체 매핑
 function_map = {
     "chat_history_tools": chat_history_tools,
     "rag_document_tools": rag_document_tools,
@@ -100,8 +98,8 @@ function_map = {
 qdr_db_path = "./qdb"
 collection_name = "frdb"
 
-client = QdrantClient(path= qdr_db_path)  # Persists changes to disk
-embedding_function = MyEmbeddingFunction() # (n, 1024)
+client = QdrantClient(path= qdr_db_path)  
+embedding_function = MyEmbeddingFunction() 
 all_points = get_all_points(client, collection_name)
 options = [client, collection_name]
 
@@ -121,15 +119,14 @@ def agent_api(req: QueryRequest):
     query_text = req.query_text
     routing_tools_collection = create_routing_tools()
     route_response = route_prompt_to_llm(query_text, routing_tools_collection)
-    function_name = route_response["function"]  # 함수 이름 가져오기
+    function_name = route_response["function"]  
     print(f'The selected function is **{function_name}**, and query is **{query_text}**.')
 
     if function_name in function_map:
-        result_data = function_map[function_name](query_text)  # 매핑된 함수 호출
+        result_data = function_map[function_name](query_text)  
 
     return result_data
 
 if __name__ == "__main__":
     import uvicorn
-    # 로컬 실행 시 uvicorn 으로 서버 실행
     uvicorn.run(app, host="0.0.0.0", port=6000, reload=True)
