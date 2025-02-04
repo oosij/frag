@@ -4,7 +4,6 @@ import re
 from llm_tools import chatml_tokenizer, inference_llm
 
 def route_prompt_to_llm(question, routing_dic):
-    # Prompt Template
     prompt_template = """
 당신은 라우팅 식별자입니다. 당신의 역할은 다음과 같습니다 : 
 당신은 question의 내용에 가장 적합하고, 올바른 답을 할 수 있는 아래의 function을 description의 값을 토대로 알맞은 function와 parameters 출력해야합니다.
