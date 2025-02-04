@@ -26,7 +26,7 @@ embedding_function = MyEmbeddingFunction()
 def ensemble_search_query(query_input, all_points, retrievers, weights, options, N=100, context_limit=3, c=60):
     retriever_docs = []
     for retriever in retrievers:
-        retriever_docs.append(retriever(query_input, all_points, N, options))  # 리트리버 호출
+        retriever_docs.append(retriever(query_input, all_points, N, options))  
 
     combined_results = rrf_rank_fusion(retriever_docs, weights, c)
 
