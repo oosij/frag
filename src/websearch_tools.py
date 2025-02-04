@@ -21,8 +21,6 @@ def websearch_run(search_query):
 
     return final_response
 
-
-# 구글 api 기반 검색 목록 추출하는 함수 
 def search(search_item, api_key, cse_id, search_depth=10, site_filter=None):
     service_url = 'https://www.googleapis.com/customsearch/v1'
 
