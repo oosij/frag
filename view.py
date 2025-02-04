@@ -2,10 +2,9 @@ import streamlit as st
 import requests
 import json
 
-from llm_func import inference_llm_steam
-from websearch_gpt import websearch_run
+from llm_func import inference_llm_steam #  src edit  
+from websearch_tools import websearch_run
 
-# Streamlit app setup
 st.set_page_config(page_title="AI Search Engine", layout="centered")
 st.markdown("""
 <style>
@@ -25,7 +24,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Centralized search engine style UI
 st.markdown("""
 <div style="text-align: center; margin-top: 50px;">
     <h1 style="font-size: 2em;">🔍 AI Search Engine</h1>
@@ -35,7 +33,6 @@ st.markdown("""
 
 
 def stream_text_in_chunks(text, chunk_size=3):
-    """텍스트를 작은 청크로 나누어 반환하는 함수"""
     chars = list(text)
     chunks = []
     current_chunk = []
@@ -46,38 +43,33 @@ def stream_text_in_chunks(text, chunk_size=3):
             chunks.append(''.join(current_chunk))
             current_chunk = []
 
-    if current_chunk:  # 마지막 청크 처리
+    if current_chunk: 
         chunks.append(''.join(current_chunk))
 
     return chunks
 
-
-# Search box and button
 col1, col2 = st.columns([8, 1])
 with col1:
     query_text = st.text_input("", placeholder="Type your query here.", label_visibility="collapsed", key="query_input")
 with col2:
     search_clicked = st.button("search", key="search_button")
 
-# Handle search input
 if search_clicked or (query_text and st.session_state.get("query_input", None)):
     if query_text.strip() == "":
         st.warning("Please enter a query to search.")
     else:
         with st.spinner("🤔 AI 생각 중..."):
-            # Prepare request payload and headers
             data = {"query_text": query_text}
             headers = {"Content-Type": "application/json"}
 
             try:
-                # Send request to server
-                response = requests.post("http://61.33.245.139:6000/agent", headers=headers, json=data)
+                response = requests.post("url+/agent", headers=headers, json=data)
 
                 if response.status_code == 200:
                     full_response = response.json()
                     prompt = full_response['token_msg']
 
-                    llm_host = "http://121.254.150.96:5000"
+                    llm_host = "TASK_inferce_api_url"
                     url = f"{llm_host}/v2/streamText"
 
                     temperature = 0.25
@@ -91,10 +83,8 @@ if search_clicked or (query_text and st.session_state.get("query_input", None)):
                         "max_tokens": max_tokens
                     }
 
-                    # Create placeholder for streaming response
                     content_placeholder = st.empty()
 
-                    # Send request to LLM server
                     llm_response = requests.post(url, json=data, stream=True)
 
                     if llm_response.status_code == 200:
@@ -104,14 +94,10 @@ if search_clicked or (query_text and st.session_state.get("query_input", None)):
                         for line in llm_response.iter_lines(decode_unicode=True):
                             if line:
                                 try:
-                                    # 현재 라인을 작은 청크로 나누기
                                     chunks = stream_text_in_chunks(line, chunk_size=3)
-
-                                    # 각 청크를 순차적으로 표시
                                     for chunk in chunks:
                                         full_response_text += chunk
 
-                                        # 응답 업데이트
                                         content_placeholder.markdown(f"""
                                         <div class="result-container ai-response">
                                             <div class="result-header">
@@ -121,12 +107,10 @@ if search_clicked or (query_text and st.session_state.get("query_input", None)):
                                         </div>
                                         """, unsafe_allow_html=True)
 
-                                        # 짧은 대기 시간 추가 (필요한 경우)
                                         import time
 
-                                        time.sleep(0.05)  # 50ms 대기
+                                        time.sleep(0.05)  
 
-                                    # 라인 끝에 줄바꿈 추가
                                     full_response_text += "\n"
 
                                 except Exception as e:
@@ -135,7 +119,6 @@ if search_clicked or (query_text and st.session_state.get("query_input", None)):
 
                         st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
 
-                        # Display references if available
                         refer_count = len(full_response) - 1
                         for i in range(1, refer_count + 1):
                             reference_key = f'reference_{i}'
