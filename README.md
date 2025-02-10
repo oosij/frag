@@ -47,7 +47,7 @@ bad case :
 
 
 
-raw data : 증권사 리포트 11월 pdf (한달, total 14702 pages) 
+Raw data : 증권사 리포트 11월 pdf (한달, total 14702 pages) 
 
 ![image](https://github.com/user-attachments/assets/fa09e447-a637-4b1d-96ec-640c57ba44a1)
 
