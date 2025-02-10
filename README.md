@@ -1,5 +1,5 @@
 # frag
-- only local model & open source (web search : google search api)
+- Only local model & open source (web search : google search api)
 - This project goal is, RAG -> RAG & Web_search & Chat (AI agent Logic) 
 
 
